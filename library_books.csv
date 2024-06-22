@@ -167,3 +167,5 @@ Book ID,Book Name,Page Count,Author First Name,Author Last Name,Book Type
 166,Lolita,153,Vladimir,Nabokov,Satire
 167,The Best Short Stories,115,Fyodor,Dostoevsky,Satire
 168,Cimarron,101,Edna,Ferber,Science
+169,testBook,N/A,TestAuthor,TestAuthor,N/A
+170,TestBook,N/A,TestFirstName,TestLastName,N/A

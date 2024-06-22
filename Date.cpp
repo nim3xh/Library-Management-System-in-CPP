@@ -15,11 +15,12 @@ int Date::getYear() const {
 }
 
 bool Date::isPast(const Date& other) const {
-    if (year < other.getYear())
+    if (year > other.getYear())
         return true;
-    else if (year == other.getYear() && month < other.getMonth())
+    else if (year == other.getYear() && month > other.getMonth())
         return true;
-    else if (year == other.getYear() && month == other.getMonth() && day < other.getDay())
+    else if (year == other.getYear() && month == other.getMonth() && day > other.getDay())
         return true;
     return false;
 }
+

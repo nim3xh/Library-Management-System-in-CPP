@@ -11,11 +11,11 @@ class Librarian : public Person {
 private:
     int salary;
     int staffID;
-    std::vector<Member> members;
 
 
 public:
     std::vector<Book> books;
+    std::vector<Member> members;
     Librarian(int staffID, const std::string& name, const std::string& address, const std::string& email, int salary);
 
     void addMember();

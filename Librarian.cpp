@@ -10,9 +10,11 @@ void Librarian::addMember() {
     int memberID;
     std::string name, address, email;
 
+    std::cout << "\n=== Add Member ===\n";
     std::cout << "Enter Member ID: ";
     std::cin >> memberID;
     std::cin.ignore();
+
     std::cout << "Enter Name: ";
     std::getline(std::cin, name);
     std::cout << "Enter Address: ";
@@ -23,12 +25,12 @@ void Librarian::addMember() {
     Member newMember(memberID, name, address, email);
     members.push_back(newMember);
 
-    std::cout << "Member added successfully!\n";
+    std::cout << "\nMember added successfully!\n";
     std::cout << "New Member Details:\n";
     std::cout << "Member ID: " << newMember.getMemberID() << "\n";
     std::cout << "Name: " << newMember.getName() << "\n";
     std::cout << "Address: " << newMember.getAddress() << "\n";
-    std::cout << "Email: " << newMember.getEmail() << "\n";
+    std::cout << "Email: " << newMember.getEmail() << "\n\n";
 }
 
 void Librarian::issueBook(int memberID, int bookID) {
@@ -70,7 +72,7 @@ void Librarian::issueBook(int memberID, int bookID) {
     book->setDueDate(dueDate);
     book->borrowBook(member, dueDate);
     member->setBooksBorrowed(*book);
-
+    
     std::cout << "Book issued successfully! Due Date: " << dueDate.getDay() << "/"
               << dueDate.getMonth() << "/" << dueDate.getYear() << std::endl;
 }
@@ -171,6 +173,7 @@ void Librarian::displayBorrowedBooks(int memberID) {
 
 void Librarian::calcFine(int memberID) {
     Member* member = nullptr;
+    
 
     for (Member& m : members) {
         if (m.getMemberID() == memberID) {
@@ -178,12 +181,13 @@ void Librarian::calcFine(int memberID) {
             break;
         }
     }
+    
 
     if (member == nullptr) {
         std::cout << "Member not found." << std::endl;
         return;
     }
-
+    
     const std::vector<Book>& borrowedBooks = member->getBooksBorrowed();
 
     auto now = std::chrono::system_clock::now();
