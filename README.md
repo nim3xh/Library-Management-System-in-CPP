@@ -1,5 +1,5 @@
 # Library-Management-System-in-CPP
-- Simple library Management System that made by using CPP.
+- Simple library Management System that made by using CPP and OOP.
 - Make file can use for run
 - exe also uploaded you can run using it also
 
